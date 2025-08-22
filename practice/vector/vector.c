@@ -1,20 +1,21 @@
 #include "vector.h"
 #include "stdlib.h"
 
-void vector_init(Vector *v, int size) {
-  v->size = size;
+void vector_init(Vector *v, int capacity) {
+  v->size = 0;
+  v->capacity = capacity;
   v->vector = malloc(sizeof(int *) * v->capacity);
-  v->capacity = size;
 }
 
-void resize(Vector *v) {
+void vector_resize(Vector *v) {
   v->capacity = v->capacity * 2;
   v->vector = (int *)realloc(v->vector, sizeof(int *) * v->capacity);
 }
 
-void push_back(Vector *v, int a) {
+void vector_push_back(Vector *v, int a) {
   if (v->size == v->capacity) {
-    resize(v);
+    vector_resize(v);
   }
   v->vector[v->size] = a;
+  v->size++;
 }

@@ -8,7 +8,7 @@ typedef struct {
 } Vector;
 
 void vector_init(Vector *v, int size);
-void push_back(Vector *v, int a);
-void resize(Vector *v);
+void vector_push_back(Vector *v, int a);
+void vector_resize(Vector *v);
 
 #endif // !LCD_H
