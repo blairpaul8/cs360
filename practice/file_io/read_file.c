@@ -10,14 +10,11 @@ int main(int argc, char *argv[]) {
     return 1;
   }
 
-  char *line = NULL;
-  size_t buffsize = 0;
-  ssize_t read;
+  char line[1000];
   int line_count = 0;
 
-  while ((read = getline(&line, &buffsize, fptr)) != EOF) {
-    printf("Line %d: %s\n", line_count, line);
-    buffsize = 0;
+  while (fgets(line, 1000, fptr) != NULL) {
+    printf("Line %d: %s", line_count, line);
     line_count++;
   }
 
