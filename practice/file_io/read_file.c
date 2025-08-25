@@ -10,10 +10,10 @@ int main(int argc, char *argv[]) {
     return 1;
   }
 
-  char line[1000];
-  int line_count = 0;
+  char line[256];
+  int line_count = 1;
 
-  while (fgets(line, 1000, fptr) != NULL) {
+  while (fgets(line, 256, fptr) != NULL) {
     printf("Line %d: %s", line_count, line);
     line_count++;
   }
