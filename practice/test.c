@@ -1,4 +1,9 @@
 #include "stdio.h"
 #include "stdlib.h"
 
-int main() {}
+int main() {
+  char *ptr = "hello";
+  char arr[] = "world";
+
+  printf("%p %p\n", ptr, arr);
+}
